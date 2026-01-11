@@ -59,36 +59,53 @@ The system follows the UML structure provided in the project documentation.
 ## 📁 Project Structure
 
 ```text
-banking-system/
+Banking Management System/
+├── README.md
+├── README.ipynb
+├── customers.csv
+├── classDiagram.jpg
 │
-├── bank/
-│   ├── Bank.java
-│   ├── Branch.java
-│   ├── Manager.java
-│   ├── Clerk.java
+├── src/
+│   ├── accounts/
+│   │   ├── Account.java (abstract)
+│   │   ├── SavingsAccount.java
+│   │   ├── CurrentAccount.java
+│   │   └── Transaction.java
+│   │
+│   ├── bank/
+│   │   ├── Bank.java
+│   │   ├── BankingSystem.java (entry point)
+│   │   ├── BankConsole.java
+│   │   ├── Branch.java
+│   │   ├── Manager.java
+│   │   └── Clerk.java
+│   │
+│   ├── user/
+│   │   ├── Customer.java
+│   │   └── CustomerConsole.java
+│   │
+│   ├── bankexceptions/
+│   │   ├── InvalidAmountException.java
+│   │   ├── InsufficientFundsException.java
+│   │   ├── AccountFrozenException.java
+│   │   ├── AccountNotFoundException.java
+│   │   └── CustomerNotFoundException.java
+│   │
+│   ├── interfaces/
+│   │   ├── Freezable.java
+│   │   ├── Transactable.java
+│   │   └── AccountViewer.java
+│   │
+│   └── database/
+│       ├── DataStorage.java
+│       └── FileHandler.java
 │
-├── user/
-│   └── Customer.java
+├── database/
+│   └── (compiled classes)
 │
-├── account/
-│   ├── Account.java           # Abstract class
-│   ├── CurrentAccount.java
-│   ├── SavingsAccount.java
-│   ├── Transaction.java
-│
-├── interfaces/
-│   ├── Freezable.java
-│   ├── Transactable.java
-│   └── AccountViewer.java
-│
-├── bankexceptions/
-│   ├── InvalidAmountException.java
-│   ├── InsufficientFundsException.java
-│   ├── AccountFrozenException.java
-│   ├── AccountNotFoundException.java
-│   └── CustomerNotFoundException.java
-│
-└── Main.java                  # Entry point for execution
+└── data/
+    └── (data files)
+    
 ```
 
 ---
@@ -211,6 +228,7 @@ Custom exception classes extending `Exception`:
 * Read/write customer and account data using CSV files
 
 ---
+
 
 
 
